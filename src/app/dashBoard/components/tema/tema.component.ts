@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Tema } from 'src/app/models/materia';
 import {EstudioService} from './../../../Services/estudio.service'
@@ -10,13 +11,15 @@ import {EstudioService} from './../../../Services/estudio.service'
   providers: [EstudioService]
 })
 export class TemaComponent implements OnInit {
-  html!: string;
+  html!: any;
 
   constructor(estudioService: EstudioService, 
-        private activatedRoute: ActivatedRoute) { 
+        private activatedRoute: ActivatedRoute,
+        private sanitizer: DomSanitizer) { 
 
     this.activatedRoute.params.subscribe(({materia, tema}) => {
-      this.html = estudioService.getTema(materia, tema);
+      let aux = estudioService.getTema(materia, tema);
+      this.html = this.sanitizer.bypassSecurityTrustHtml(aux);
     })
     
   }

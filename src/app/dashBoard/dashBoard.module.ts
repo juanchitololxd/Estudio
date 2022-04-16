@@ -19,6 +19,9 @@ import { MateriaComponent } from './components/materia/materia.component';
 import { TemaComponent } from './components/tema/tema.component';
 import { TemaDarkComponent } from './components/tema-dark/tema-dark.component';
 import { RouterOutletComponent } from './components/router-outlet/router-outlet.component';
+import { CargarScriptsService } from '../Services/cargar-scripts.service';
+import { EstudioService } from '../Services/estudio.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     DashBoardComponent,
@@ -42,8 +45,14 @@ import { RouterOutletComponent } from './components/router-outlet/router-outlet.
     MatExpansionModule,
     MatTreeModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
 
+  ],
+  providers: [
+    CargarScriptsService,
+    EstudioService
+    
   ]
 })
 export class DashBoardModule { }

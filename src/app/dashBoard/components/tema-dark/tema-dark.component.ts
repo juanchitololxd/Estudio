@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Tema } from 'src/app/models/materia';
 import { EstudioService } from 'src/app/Services/estudio.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { CargarScriptsService } from 'src/app/Services/cargar-scripts.service';
+
 
 @Component({
   selector: 'app-tema-dark',
@@ -9,14 +11,24 @@ import { EstudioService } from 'src/app/Services/estudio.service';
   styleUrls: ['./tema-dark.component.css']
 })
 export class TemaDarkComponent implements OnInit {
-  html!: string;
+  html!: any;
 
-  constructor(estudioService: EstudioService, 
-        private activatedRoute: ActivatedRoute) { 
-
+  constructor(
+        private activatedRoute: ActivatedRoute,
+        private sanitizer: DomSanitizer,
+        private cargaScript: CargarScriptsService,
+        private estudioService: EstudioService, ) { 
+    
+    
     this.activatedRoute.params.subscribe(({materia, tema}) => {
-      this.html = estudioService.getTema(materia, tema);
-    })
+      let aux = this.estudioService.getTema(materia, tema);
+      this.html = this.sanitizer.bypassSecurityTrustHtml(aux);
+      this.estudioService.getTema2().subscribe(data => {
+        console.log(data);
+      })
+      
+    });
+    this.cargaScript.cargaCodeStyle();
     
   }
 
