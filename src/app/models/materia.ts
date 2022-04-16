@@ -9,3 +9,16 @@ export interface ExampleFlatNode {
     name: string;
     level: number;
   }
+
+export interface Materia {
+  temas: Tema[];
+  name: string;
+  id: string;
+
+}
+
+export interface Tema {
+  html: string;
+  name: string;
+  css: string;
+}

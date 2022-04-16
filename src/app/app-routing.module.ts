@@ -30,16 +30,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/dash',
+        redirectTo: '/estudio',
         pathMatch: 'full',
       },
       {
-        path: 'dash',
+        path: 'estudio',
         loadChildren: () => import('./dashBoard/dashBoard.module').then(m => m.DashBoardModule)
-      },
-      {
-        path: 'finanzas',
-        loadChildren: () => import('./finanzas/finanzas.module').then(m => m.FinanzasModule)
       }
     ]
   },

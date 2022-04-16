@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashBoardComponent } from './components/dashBoard.component';
-
+import {MatTableModule} from '@angular/material/table';
 import { DashBoardRoutingModule } from './dashBoard-routing.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -11,17 +10,25 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
-import { EstudioComponent } from './components/estudio/estudio.component';
-import { MateriaDashComponent } from './components/estudio/materia-dash/materia-dash.component';
-import { RepasosDashComponent } from './components/estudio/repasos-dash/repasos-dash.component';
-import { ExamenesDashComponent } from './components/estudio/examenes-dash/examenes-dash.component';
+import {MatCardModule} from '@angular/material/card'
+import { DashBoardComponent } from './dashBoard.component';
+import { MateriaDashComponent } from './components/materia-dash/materia-dash.component';
+import { RepasosDashComponent } from './components/repasos-dash/repasos-dash.component';
+import { ExamenesDashComponent } from './components/examenes-dash/examenes-dash.component';
+import { MateriaComponent } from './components/materia/materia.component';
+import { TemaComponent } from './components/tema/tema.component';
+import { TemaDarkComponent } from './components/tema-dark/tema-dark.component';
+import { RouterOutletComponent } from './components/router-outlet/router-outlet.component';
 @NgModule({
   declarations: [
     DashBoardComponent,
-    EstudioComponent,
     MateriaDashComponent,
-    RepasosDashComponent,
-    ExamenesDashComponent
+   RepasosDashComponent,
+     ExamenesDashComponent,
+     MateriaComponent,
+     TemaComponent,
+     TemaDarkComponent,
+     RouterOutletComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +40,10 @@ import { ExamenesDashComponent } from './components/estudio/examenes-dash/examen
     MatListModule,
     MatDividerModule,
     MatExpansionModule,
-    MatTreeModule
+    MatTreeModule,
+    MatCardModule,
+    MatTableModule
+
   ]
 })
 export class DashBoardModule { }
