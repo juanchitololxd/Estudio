@@ -6,8 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EstudioService {
-  url = environment.estudio
-  path ="./../../assets/materias.json"
+  path ="./../../assets/materias.json";
 
   constructor(private http: HttpClient) { }
 
