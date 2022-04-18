@@ -1,6 +1,7 @@
 
 import { Component, OnInit} from '@angular/core';
 import { Materia, Tema } from 'src/app/models/materia';
+import { EstudioService } from '../Services/estudio.service';
 
 @Component({
   selector: 'app-estudio',
@@ -13,57 +14,12 @@ export class DashBoardComponent implements OnInit {
   materia!: Materia;
   display = false;
   displayedColumns: string[] = ['Tema'];
-  constructor(){
-    this.jconfig = {
-      "materias": [
-        {
-          "id": "CVDS",
-          "name": "CVDS",
-          "temas": [
-          {
-            "name": "Como hacer esto",
-            "html": "<h1>A</h1>",
-            "css": "dark"
-          },
-          {
-            "name": "Como hacer lo otro",
-            "html": "<h1>A</h1>",
-            "css": "dark"
-          }
-          ]
-          
-        },
-        {
-          "id": "RECO1",
-          "name": "RECO :)"
-        },
-        {
-          "id": "RECO2",
-          "name": "RECO :)"
-        },
-        {
-          "id": "RECO3",
-          "name": "RECO :)"
-        },
-        {
-          "id": "AUPN",
-          "name": "AUPN",
-          "html": "<h1>B</h1>",
-          "temas": [
-          {
-            "name": "Como hacer esto",
-            "html": "<h1>A</h1>",
-            "css": "oscuro"
-          },
-          {
-            "name": "Como hacer lo otro",
-            "html": "<h1>A</h1>",
-            "css": "oscuro"
-          }
-          ]
-        }
-      ]
-    }
+  constructor(estudioService: EstudioService){
+    estudioService.getMaterias().subscribe(
+      data => {
+        this.jconfig = data;
+      }
+    );
   }
 
 
@@ -74,10 +30,9 @@ export class DashBoardComponent implements OnInit {
     this.materia = $event;
     this.display = true;
   }
-  openTopic(mat: Materia, tema: Tema){
-    //dinamizar el uno por id del tema (cuando haya id xd)
-    window.open(`/estudio/${mat.id}/1/dark`, '_blank');
+  openTopic(mat: Materia, tema: string){
+    let temaName = tema.split('.')[0];
+    window.open(`/estudio/${mat.id}/${temaName}/dark`);
   }
-
 
 }

@@ -11,7 +11,7 @@ export interface ExampleFlatNode {
   }
 
 export interface Materia {
-  temas: Tema[];
+  temas: string[];
   name: string;
   id: string;
 

@@ -1,0 +1,46 @@
+{
+    "materias": [
+        {
+            "id": "AUPN",
+            "name": "AUPN",
+            "temas": [
+                "index.html"
+            ]
+        },
+        {
+            "id": "BITCOIN",
+            "name": "BITCOIN",
+            "temas": []
+        },
+        {
+            "id": "CV",
+            "name": "CV",
+            "temas": []
+        },
+        {
+            "id": "ESMV_M",
+            "name": "ESMV_M",
+            "temas": []
+        },
+        {
+            "id": "FDGP",
+            "name": "FDGP",
+            "temas": []
+        },
+        {
+            "id": "PDF",
+            "name": "PDF",
+            "temas": []
+        },
+        {
+            "id": "PSOC",
+            "name": "PSOC",
+            "temas": []
+        },
+        {
+            "id": "RECO",
+            "name": "RECO",
+            "temas": []
+        }
+    ]
+}

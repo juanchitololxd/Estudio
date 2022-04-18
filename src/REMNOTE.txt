@@ -1,0 +1,17 @@
+REMNOTE
+
+
+Una nota puede pertenecer a varios temas
+
+Tratamiento de cards: Porque pueden haber apuntes muy largos, y la idea es que sean lo mas concisos posibles
+
+"Las cosas se recuerdan mas con contexto"
+
+
+
+
+Por qué se usan promesas y no suscripciones?
+
+En los modelos en que se basa uno al elegir entre class o interfaz?
+
+Hay una diferencia en rendimiento al usar un componente que está en shared? (al usar el )

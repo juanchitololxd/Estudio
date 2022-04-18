@@ -17,16 +17,15 @@ export class TemaDarkComponent implements OnInit {
         private activatedRoute: ActivatedRoute,
         private sanitizer: DomSanitizer,
         private cargaScript: CargarScriptsService,
-        private estudioService: EstudioService, ) { 
+        private estudioService: EstudioService ) { 
     
     
     this.activatedRoute.params.subscribe(({materia, tema}) => {
-      let aux = this.estudioService.getTema(materia, tema);
-      this.html = this.sanitizer.bypassSecurityTrustHtml(aux);
-      this.estudioService.getTema2().subscribe(data => {
-        console.log(data);
-      })
-      
+        this.estudioService.getTema(materia, tema).subscribe(
+        data => {
+          this.html = this.sanitizer.bypassSecurityTrustHtml(data);
+        }
+      )
     });
     this.cargaScript.cargaCodeStyle();
     

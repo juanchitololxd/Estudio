@@ -23,3 +23,13 @@
     text-decoration: none;
 }
 
+* {
+    background-color: darksalmon;
+}
+
+
+.body { 
+    background-color: bisque;
+    height:100%;
+    margin: 0;
+}
