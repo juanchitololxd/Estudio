@@ -4,6 +4,7 @@
             "id": "AUPN",
             "name": "AUPN",
             "temas": [
+                "as-is-to-be.html",
                 "index.html"
             ]
         },
@@ -35,7 +36,11 @@
         {
             "id": "PSOC",
             "name": "PSOC",
-            "temas": []
+            "temas": [
+                "estres.html",
+                "influencia-grupal.html",
+                "psicologia-campo-clinico.html"
+            ]
         },
         {
             "id": "RECO",
