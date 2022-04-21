@@ -26,7 +26,10 @@
         {
             "id": "FDGP",
             "name": "FDGP",
-            "temas": []
+            "temas": [
+                "balance.html",
+                "estudios-costos.html"
+            ]
         },
         {
             "id": "PDF",
