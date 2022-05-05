@@ -40,9 +40,12 @@
             "id": "PSOC",
             "name": "PSOC",
             "temas": [
+                "ansiedad.html",
+                "depresion.html",
                 "estres.html",
                 "influencia-grupal.html",
-                "psicologia-campo-clinico.html"
+                "psicologia-campo-clinico.html",
+                "timidez.html"
             ]
         },
         {
